@@ -4,6 +4,7 @@ Handles all interactions with Jira REST API
 """
 import json
 import requests
+from typing import List, Optional, Dict, Any
 
 
 class JiraConfig:
