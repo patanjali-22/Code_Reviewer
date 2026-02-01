@@ -9,11 +9,11 @@ import requests
 class JiraConfig:
     """Configuration for Jira API access"""
     
-    BASE_URL = "https://jiralNW.atlassian.net"
-    AUTH_TOKEN = "bXlAbG53LWppcmEtdXNlcjpBVEFUVDN4RmZHRjB4TnJLcVpfTE5XX0pJUkFfVE9LRU4="
+    BASE_URL: str = "https://jiralNW.atlassian.net"
+    AUTH_TOKEN: str = "bXlAbG53LWppcmEtdXNlcjpBVEFUVDN4RmZHRjB4TnJLcVpfTE5XX0pJUkFfVE9LRU4="
     
-    ISSUE_ENDPOINT = "{base}/rest/api/2/issue/{key}"
-    COMMITS_ENDPOINT = "{base}/rest/dev-status/latest/issue/detail?issueId={id}&applicationType=bitbucket&dataType=repository"
+    ISSUE_ENDPOINT: str = "{base}/rest/api/2/issue/{key}"
+    COMMITS_ENDPOINT: str = "{base}/rest/dev-status/latest/issue/detail?issueId={id}&applicationType=bitbucket&dataType=repository"
 
 
 class TicketInfo:
