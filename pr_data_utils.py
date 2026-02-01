@@ -12,6 +12,10 @@ class PullRequestDataHelper:
     DATA_FILE_PATH = "data/json/pull_request_data.json"
     JIRA_ID_PATTERN = r'\b[A-Z]+-[0-9]+\b'
     
+    # Error messages
+    FILE_NOT_FOUND_MSG = "Pull request data file not found"
+    NO_MATCH_MSG = "No matching Jira IDs found"
+    
     @classmethod
     def load_data(cls):
         """
