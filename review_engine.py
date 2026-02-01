@@ -9,6 +9,9 @@ from agent_definitions import AIAgentFactory
 from task_definitions import ReviewTaskBuilder
 from openai_client import OpenAIAnalyzer
 
+# Configuration
+CREW_VERBOSITY = 2  # 1 for basic, 2 for detailed logging
+
 
 class CodeReviewEngine:
     """
