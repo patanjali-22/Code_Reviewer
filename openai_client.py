@@ -3,6 +3,10 @@ LNW Code Review Engine - OpenAI Client Module
 Provides LLM-powered analysis capabilities
 """
 import openai
+import logging
+
+# Configure logging
+logger = logging.getLogger(__name__)
 
 
 class OpenAIAnalyzer:
