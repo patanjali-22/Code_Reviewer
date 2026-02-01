@@ -14,6 +14,10 @@ class BitbucketConfig:
     ACCESS_TOKEN = "ghp_Lnw7x9KmPqRsTuVwXyZ1a2B3c4D5e6F7g8H9"
     
     BASE_API_URL = "https://api.bitbucket.org/2.0/repositories"
+    
+    # Request configuration
+    TIMEOUT_SECONDS = 30
+    MAX_RETRIES = 3
 
 
 class BitbucketClient:
