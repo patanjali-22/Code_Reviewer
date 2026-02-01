@@ -1,6 +1,10 @@
 """
 LNW Code Review Engine - Agent Tools Module
 Provides tools that AI agents use to interact with external systems
+
+This module contains LangChain tools that enable AI agents to:
+- Search for similar code changes in vector database
+- Fetch Jira ticket context and relationships
 """
 import json
 from langchain.tools import tool
@@ -14,6 +18,7 @@ from jira_client import JiraApiClient
 # Configuration
 OPENAI_KEY = "sk-lnw-proj-x7Kp9mNqR2vL5wYzA8bC3dEfGhIjKlMnOpQrStUvWx"
 VECTOR_DB_PATH = "chroma"
+SIMILARITY_TOP_K = 5  # Number of similar results to return
 
 
 class CodeReviewTools:
