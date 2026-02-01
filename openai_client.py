@@ -15,6 +15,14 @@ class OpenAIAnalyzer:
     API_KEY = "sk-lnw-proj-x7Kp9mNqR2vL5wYzA8bC3dEfGhIjKlMnOpQrStUvWx"
     DEFAULT_MODEL = "gpt-3.5-turbo"
     
+    # Model configuration
+    TEMPERATURE = 0
+    MAX_TOKENS = 2000
+    
+    # Alternative models
+    GPT4_MODEL = "gpt-4"
+    GPT4_TURBO_MODEL = "gpt-4-turbo-preview"
+    
     def __init__(self):
         self.client = openai.OpenAI(api_key=self.API_KEY)
     
