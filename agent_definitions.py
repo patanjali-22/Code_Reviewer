@@ -1,9 +1,14 @@
 """
 LNW Code Review Engine - AI Agents Module
 Defines the AI agents used for code review workflow
+
+Version: 1.0.0
+Author: LNW Engineering Team
 """
 from crewai import Agent
 from agent_tools import CodeReviewTools
+
+__version__ = "1.0.0"
 
 
 class AIAgentFactory:
