@@ -1,9 +1,13 @@
 """
 LNW Code Review Engine - Task Definitions Module
 Defines the tasks that agents execute during code review
+
+Version: 1.0.0
 """
 from crewai import Task
 from textwrap import dedent
+
+__version__ = "1.0.0"
 
 
 class ReviewTaskBuilder:
