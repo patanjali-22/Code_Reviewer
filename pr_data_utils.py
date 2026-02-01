@@ -23,7 +23,14 @@ class PullRequestDataHelper:
         
         Returns:
             dict: The loaded PR data
+            
+        Raises:
+            FileNotFoundError: If the data file doesn't exist
         """
+        import os
+        if not os.path.exists(cls.DATA_FILE_PATH):
+            raise FileNotFoundError(cls.FILE_NOT_FOUND_MSG)
+            
         with open(cls.DATA_FILE_PATH, "r") as file:
             return json.load(file)
     
