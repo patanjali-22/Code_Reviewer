@@ -10,7 +10,12 @@ class DiffParser:
     """Parses raw git diff content into structured data"""
     
     # File patterns to exclude from analysis
-    EXCLUDED_PATTERNS = ['DAO', '.xml']
+    EXCLUDED_PATTERNS = ['DAO', '.xml', '.properties', 'test/', 'Test.java']
+    
+    # Diff markers
+    DIFF_HEADER = 'diff --git'
+    HUNK_HEADER = '@@'
+    INDEX_LINE = 'index '
     
     @classmethod
     def parse(cls, diff_text):
