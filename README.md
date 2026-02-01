@@ -84,6 +84,34 @@ Code_Reviewer/
    streamlit run main.py
    ```
 
+## 🐳 Docker Deployment
+
+### Quick Start with Docker
+
+```bash
+# Build and run with Docker Compose
+docker-compose up -d
+
+# Or build manually
+docker build -t lnw-code-reviewer .
+docker run -p 8501:8501 -e OPENAI_API_KEY=your_key lnw-code-reviewer
+```
+
+### Environment Variables for Docker
+
+Create a `.env` file in the project root:
+```env
+OPENAI_API_KEY=your_openai_api_key
+JIRA_TOKEN=your_jira_token
+```
+
+Then run:
+```bash
+docker-compose --env-file .env up -d
+```
+
+Access the application at: `http://localhost:8501`
+
 ## ⚙️ Configuration
 
 | File | Settings |

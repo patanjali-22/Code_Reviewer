@@ -1,0 +1,48 @@
+# LNW Code Review Assistant - Docker Compose
+version: '3.8'
+
+services:
+  code-reviewer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lnw-code-reviewer
+    ports:
+      - "8501:8501"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - JIRA_TOKEN=${JIRA_TOKEN}
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    volumes:
+      # Mount data directory for PR data persistence
+      - ./data:/app/data:ro
+      # Mount chroma directory for vector database
+      - chroma_data:/app/chroma
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8501/_stcore/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - code-reviewer-network
+  # Optional: ChromaDB as separate service for production
+  # chromadb:
+  #   image: chromadb/chroma:latest
+  #   container_name: lnw-chromadb
+  #   ports:
+  #     - "8000:8000"
+  #   volumes:
+  #     - chroma_data:/chroma/chroma
+  #   networks:
+  #     - code-reviewer-network
+
+volumes:
+  chroma_data:
+    driver: local
+
+networks:
+  code-reviewer-network:
+    driver: bridge
