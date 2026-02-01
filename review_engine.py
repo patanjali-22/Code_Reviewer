@@ -1,6 +1,9 @@
 """
 LNW Code Review Engine - Main Review Orchestrator
 Coordinates AI agents and tasks to perform comprehensive code reviews
+
+Version: 1.0.0
+Author: LNW Engineering Team
 """
 import json
 from crewai import Crew
